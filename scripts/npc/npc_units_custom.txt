@@ -1,0 +1,20 @@
+// Dota Units File
+"DOTAUnits"
+{
+    "npc_vision_potion"
+    {
+        "BaseClass"                      "npc_dota_beastmaster_hawk"
+        "Model"                          "models/development/invisiblebox.mdl"
+        "ModelScale"                     "1.0"
+        "MinimapIcon"                    ""
+        "HealthBarOffset"                "400000"
+        "MinimapIconSize"                "0"
+        "MovementCapabilities"           "DOTA_UNIT_CAP_MOVE_FLY"
+        "MovementSpeed"                  "0"
+        "VisionDaytimeRange"             "50000"        // Range of vision during day light.
+        "VisionNighttimeRange"           "50000"        // Range of vision at night time.
+		
+        "AbilityLayout"	                 "4"
+        "Ability1"                       "vision_potion_vis"
+	}
+}

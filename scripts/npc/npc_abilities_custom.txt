@@ -1,135 +1,163 @@
 // Dota Heroes File
 "DOTAAbilities"
 {
-	"Version"		"1"
-	"archers_shoot_arrow"
-	{
-		"ID"					"600"
-		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_DIRECTIONAL | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
-		"BaseClass"				"mirana_arrow"
-		"Maxlevel"				"no clue yet"
-		
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"5000"
-		"AbilityCastPoint"				"0.0"
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"5"
-		"AbilityDuration"				"3.11 3.11 3.11 3.11"
+    "Version"                            "1"
+    "archers_shoot_arrow"
+    {
+        "ID"                             "600"
+        "AbilityBehavior"                "DOTA_ABILITY_BEHAVIOR_DIRECTIONAL | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+        "BaseClass"                      "mirana_arrow"
+        "Maxlevel"                       "no clue yet"
+        
+        // Casting
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityCastRange"               "5000"
+        "AbilityCastPoint"               "0.0"
+        // Time        
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityCooldown"                "5"
+        "AbilityDuration"                "3.11 3.11 3.11 3.11"
 
-		// Damage.
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityDamage"					"100"
+        // Damage.
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityDamage"                  "100"
 
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"1"
+        // Cost
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityManaCost"                "1"
 
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"arrow_speed"		"1250.0"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"arrow_width"		"50"
-			}
-			"03"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"arrow_range"		"3000"
-			}
-			"04"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"arrow_max_stunrange"	"1500"
-			}
-			"05"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"arrow_min_stun"	"0.0"
-			}
-			"06"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"arrow_max_stun"	"0.0"
-			}
-			"07"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"arrow_bonus_damage"	"0.0"
-			}
-			"08"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"arrow_vision"	"0.0"
-			}
-		}
-	}
-	"archers_localize"
-	{
-		"ID"					"601"
-		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-		"BaseClass"				"ability_datadriven"
-		"Maxlevel"				"4"
-	
-	// Casting
-		"AbilityCastPoint"				"0 0 0 0"
-	
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"20.0 15.0 10.0 5.0"
+        // Special
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type"               "FIELD_FLOAT"
+                "arrow_speed"            "1250.0"
+            }
+            "02"
+            {
+                "var_type"               "FIELD_INTEGER"
+                "arrow_width"            "50"
+            }
+            "03"
+            {
+                "var_type"               "FIELD_INTEGER"
+                "arrow_range"            "3000"
+            }
+            "04"
+            {
+                "var_type"               "FIELD_INTEGER"
+                "arrow_max_stunrange"    "1500"
+            }
+            "05"
+            {
+                "var_type"               "FIELD_FLOAT"
+                "arrow_min_stun"         "0.0"
+            }
+            "06"
+            {
+                "var_type"               "FIELD_FLOAT"
+                "arrow_max_stun"         "0.0"
+            }
+            "07"
+            {
+                "var_type"               "FIELD_FLOAT"
+                "arrow_bonus_damage"     "0.0"
+            }
+            "08"
+            {
+                "var_type"               "FIELD_INTEGER"
+                "arrow_vision"           "0.0"
+            }
+        }
+    }
+    
+    "archers_localize"
+    {
+        "ID"                             "601"
+        "AbilityBehavior"                "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+        "BaseClass"                      "ability_datadriven"
+        "Maxlevel"                       "4"
+    
+    // Casting
+        "AbilityCastPoint"               "0 0 0 0"
+    
+        // Time        
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityCooldown"                "20.0 15.0 10.0 5.0"
 
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"6.0 5.0 4.0 3.0"
-		//to be finished later
-		
-	}
-	"archers_evasion"
-	{
-		"ID"					"602"
-		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_MOVEMENT | DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES"
-		"BaseClass"				"puck_phase_shift"
-		"Maxlevel"				"6"
-	
-	// Casting
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"0 0 0 0"
-		"AbilityChannelTime"			"3.0 3.0 3.0 3.0 3.0 3.0"
+        // Cost
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityManaCost"                "6.0 5.0 4.0 3.0"
+        //to be finished later
+        
+    }
+    
+    "archers_evasion"
+    {
+        "ID"                             "602"
+        "AbilityBehavior"                "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_MOVEMENT | DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES"
+        "BaseClass"                      "puck_phase_shift"
+        "Maxlevel"                       "6"
+    
+    // Casting
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityCastPoint"               "0 0 0 0"
+        "AbilityChannelTime"             "3.0 3.0 3.0 3.0 3.0 3.0"
 
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"20.0 18.0 16.0 14.0 12.0 10.0"
+        // Time        
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityCooldown"                "20.0 18.0 16.0 14.0 12.0 10.0"
 
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"0 0 0 0"
+        // Cost
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityManaCost"                "0 0 0 0"
 
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"duration"					"3.0 3.0 3.0 3.0"
-			}
-		}
-	}
-	archers_shadowmeld"
-	{
-		"ID"					"603"
-		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityType"			"DOTA_ABILITY_TYPE_ULTIMATE"
-		"BaseClass"				"ability_datadriven"
-		"Maxlevel"				"1"
-		//to be finished later
-		
+        // Special
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type"               "FIELD_FLOAT"
+                "duration"               "3.0 3.0 3.0 3.0"
+            }
+        }
+    }
+    
+    archers_shadowmeld"
+    {
+        "ID"                             "603"
+        "AbilityBehavior"                "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "AbilityType"                    "DOTA_ABILITY_TYPE_ULTIMATE"
+        "BaseClass"                      "ability_datadriven"
+        "Maxlevel"                       "1"
+        //to be finished later
+    }
+    
+    "archers_vision_potion_effects"
+    {
+        "BaseClass"                      "ability_datadriven"
+        "ID"                             "2005"
+        "AbilityBehavior"                "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "Modifiers"
+        {
+            "modifier_vision_potion_properties"
+            {
+                "Passive"                "1"
+                "Properties"
+                {
+                    "MODIFIER_PROPERTY_BONUS_VISION_PERCENTAGE"        "50000000000000"
+                    "MODIFIER_PROPERTY_BONUS_DAY_VISION"               "500000000000000"
+                    "MODIFIER_PROPERTY_BONUS_NIGHT_VISION"             "5000000000000000"
+                }
+                "States"
+                {
+                    "MODIFIER_STATE_UNSELECTABLE"                      "MODIFIER_STATE_VALUE_ENABLED"
+                    "MODIFIER_STATE_NOT_ON_MINIMAP"                    "MODIFIER_STATE_VALUE_ENABLED"
+                }
+            }
+        }
+    }
 }

@@ -1,0 +1,270 @@
+"DOTAAbilities"
+{
+    "item_archers_potion_of_invisibility"
+    {
+        //General
+        "ID"                             "850"
+        "AbilityBehavior"                "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+        "BaseClass"                      "item_datadriven"
+        "AbilityTextureName"             "item_trollsandelves_armor_12"
+        
+        // Stats        
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityCooldown"                "0"
+        "AbilityManaCost"                "0"
+        "ItemCost"                       "25"
+        "ItemQuality"                    "consumable"
+        "ItemAliases"                    "potion of invisibility"
+        "ItemStackable"                  "1"
+        "ItemPermanent"                  "0"
+        "ItemInitialCharges"             "1"
+        
+        // Special    
+        //-------------------------------------------------------------------------------------------------------------
+        "OnSpellStart"
+        {
+            "SpendCharge"
+            {}
+            "ApplyModifier"
+            {
+                "Target"                 "CASTER"
+                "ModifierName"           "modifier_invisible"
+                "Duration"               "20"
+            }
+            "FireSound"
+            {
+                "Target"                 "CASTER"
+                "EffectName"             "DOTA_Item.InvisibilitySword.Activate"
+            }
+        }
+    }
+    "item_archers_potion_of_speed"
+    {
+        //General
+        "ID"                             "851"
+        "AbilityBehavior"                "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+        "BaseClass"                      "item_datadriven"
+        "AbilityTextureName"             "item_trollsandelves_armor_12"
+        "precache"
+        {
+            "particlefile"               "particles/units/heroes/hero_bloodseeker.pcf"
+        }
+
+        
+        // Stats        
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityCooldown"                "0"
+        "AbilityManaCost"                "0"
+        "ItemCost"                       "5"
+        "ItemQuality"                    "consumable"
+        "ItemAliases"                    "potion of speed"
+        "ItemStackable"                  "1"
+        "ItemPermanent"                  "0"
+        "ItemInitialCharges"             "1"
+        
+        // Special    
+        //-------------------------------------------------------------------------------------------------------------
+        "OnSpellStart"
+            {
+                "SpendCharge"
+                {}
+                "ApplyModifier"
+                {
+                    "Target"             "CASTER"
+                    "ModifierName"       "modifier_speed_potion_activate"
+                }
+                "FireSound"
+                {
+                    "Target"             "CASTER"
+                    "EffectName"         "DOTA_Item.PhaseBoots.Activate"
+                }
+            }
+        "Modifiers"
+        {
+            "modifier_speed_potion_activate"
+            {
+                "Duration"               "15"
+                "EffectName"             "bloodseeker_thirst_owner_e"
+                "EffectAttachType"       "follow_origin"
+                "Properties"
+                {
+                    "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"    "30"
+                }
+            }
+        }
+    }
+    "item_archers_potion_of_omniscience"
+    {
+        "ID"                             "852"
+        "AbilityBehavior"                "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+        "BaseClass"                      "item_datadriven"
+        "AbilityTextureName"             "tbd852"
+
+        
+        // Stats        
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityCooldown"                "10"
+        "AbilityManaCost"                "0"
+        "ItemCost"                       "10"
+        "ItemQuality"                    "consumable"
+        "ItemAliases"                    "potion of omniscience"
+        "ItemStackable"                  "1"
+        "ItemPermanent"                  "0"
+        "ItemInitialCharges"             "1"
+        "OnSpellStart"
+        {
+            "SpendCharge"
+            {}
+            "SpawnUnit"
+            {
+                "UnitName"               "npc_vision_potion"
+                "Target"                 "CASTER"
+                "Duration"               "10"
+                "UnitCount"              "1"
+                "OnSpawn"
+            }
+            "FireSound"
+            {
+                "Target"                "CASTER"
+                "EffectName"            "Hero_Rattletrap.Rocket_Flare.Fire"
+            }
+        }
+    }
+	"item_archers_scroll_of_speed"
+	{
+		"ID"                             "853"
+        "AbilityBehavior"                "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+        "BaseClass"                      "item_datadriven"
+        "AbilityTextureName"             "tbd853"
+	    
+		// Stats        
+        //-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"                "10"
+        "AbilityManaCost"                "0"
+        "ItemCost"                       "10"
+        "ItemQuality"                    "consumable"
+        "ItemAliases"                    "potion of omniscience"
+        "ItemStackable"                  "1"
+        "ItemPermanent"                  "0"
+        "ItemInitialCharges"             "1"
+        "OnSpellStart"
+        {
+            "SpendCharge"
+            {}
+            "FireSound"
+            {
+                "Target"                 "CASTER"
+                "EffectName"             "DOTA_Item.DoE.Activate"
+            }
+            "ApplyModifier"
+            {
+                "Target"
+                {
+                    "Center" "CASTER"
+                    "Radius" "%radius"
+                    "Teams" "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+                    "Types" "DOTA_UNIT_TARGET_HERO"
+                }
+                "ModifierName"           "modifier_speed_scroll_activate"
+            }
+		}
+		"Modifiers"
+		{
+			"modifier_speed_scroll_activate"
+			{
+				"Duration"               "10"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"                  "25"
+				}
+			}
+		}
+	}
+	"item_archers_potion_of_mana"
+	{
+		"ID"							 "854"
+		"BaseClass"                      "item_clarity"
+		"AbilityBehavior"				 "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"AbilityUnitTargetTeam"			 "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			 "DOTA_UNIT_TARGET_HERO"
+		"Model"							 "models/props_gameplay/clarity.mdl"
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				 "100"
+		"AbilityCastPoint"				 "0.0"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"					   	 "3"
+		"ItemShopTags"					 "consumable"
+		"ItemQuality"					 "consumable"
+		"ItemAliases"					 "potion of mana"
+		"ItemStackable"					 "1"
+		"ItemPermanent"					 "0"
+		"ItemInitialCharges"			 "1"
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"buff_duration"			"1"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"total_mana"			"100"
+			}
+		}
+	}
+	"item_archers_dust_of_appearance"
+	{
+		"ID"							 "855"
+		"BaseClass"                      "item_dust"
+		"AbilityBehavior"				 "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"Model"							 "models/props_gameplay/dust.mdl"
+		"Effect"						 "dropped_dust"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				 "0.0"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				 "0"
+		"ItemCost"						 "4"
+		"ItemShopTags"					 "consumable"
+		"ItemQuality"					 "consumable"
+		"ItemAliases"					 "dust of appearance"
+		"ItemStackable"					 "1"
+		"ItemShareability"				 "ITEM_FULLY_SHAREABLE"
+		"ItemPermanent"					 "0"
+		"ItemInitialCharges"			 "2"		  
+		"ItemDeclarations"				 "DECLARE_PURCHASES_TO_TEAMMATES"
+		"ItemSupport"					 "1"
+
+
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"duration"				"20"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"1050"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"movespeed"				"0"
+			}
+		}
+	}
+}
