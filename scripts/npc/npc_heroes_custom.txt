@@ -3,35 +3,80 @@
 // the specified key-value combinations.  Use override_hero <hero_to_override> for this.
 "DOTAHeroes"
 {
-    "npc_dota_hero_archers_good_archer"
+    "npc_dota_hero_archers_light_archer"
     {
+		//Basics
         "override_hero"                  "npc_dota_hero_windrunner"
-        "Ability1"                       "archers_shoot_arrow
+        "Ability1"                       "archers_shoot_arrow"
         "Ability2"                       "archers_localize"
         "Ability3"                       "archers_evasion"
-        "Ability4"                       "archers_shadowmeld"
-        "MovementSpeed"                  "290"
+        //"Ability4"                       "archers_shadowmeld"
+		
+		//Movement and attack
+		"MovementSpeed"                  "290"
+		"MovementTurnRate"				 "0.6"
+		"AttackCapabilities"			"DOTA_UNIT_CAP_NO_ATTACK"
         "AttackDamageMin"                "0"
         "AttackDamageMax"                "0"
         "AttackRate"                     "1.5"
         "AttackAnimationPoint"           "0.4"
         "AttackAcquisitionRange"         "0"
         "AttackRange"                    "0"
-        
+		"ArmorPhysical"					 "0"
+		"MagicalResistance"				 "0"
+		
+		//Attributes
+		"AttributePrimary"				 "DOTA_ATTRIBUTE_AGILITY"
+		"AttributeBaseStrength"			 "1"									// Base strength
+		"AttributeStrengthGain"			 "0.0"									// Strength bonus per level.
+		"AttributeBaseIntelligence"		 "1"									// Base intelligence
+		"AttributeIntelligenceGain"		 "0.0"									// Intelligence bonus per level.
+		"AttributeBaseAgility"			 "1"									// Base agility
+		"AttributeAgilityGain"			 "0.0"									// Agility bonus per level.
+		
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"					 "81"									// Base health
+		"StatusHealthRegen"				 "2.97"									// Health regeneration rate.
+		"StatusMana"					 "107"									// Base mana.
+		"StatusManaRegen"				 "2.96"									// Mana regeneration rate.
     }
-    "npc_dota_hero_archers_bad_archer"
+    "npc_dota_hero_archers_dark_archer"
     {
+		//Basics
         "override_hero"                  "npc_dota_hero_drow_ranger"
-        "Ability1"                       "archers_shoot_arrow
+        "Ability1"                       "archers_shoot_arrow"
         "Ability2"                       "archers_localize"
         "Ability3"                       "archers_evasion"
-        "Ability4"                       "archers_shadowmeld"
-        "MovementSpeed"                  "290"
+       //"Ability4"                       "archers_shadowmeld"
+		
+		//Movement and attack
+		"MovementSpeed"                  "290"
+		"MovementTurnRate"				 "0.6"
+		"AttackCapabilities"			"DOTA_UNIT_CAP_NO_ATTACK"
         "AttackDamageMin"                "0"
         "AttackDamageMax"                "0"
         "AttackRate"                     "1.5"
         "AttackAnimationPoint"           "0.4"
         "AttackAcquisitionRange"         "0"
         "AttackRange"                    "0"
+		"ArmorPhysical"					 "0"
+		"MagicalResistance"				 "0"	
+		
+		//Attributes
+		"AttributePrimary"				 "DOTA_ATTRIBUTE_AGILITY"
+		"AttributeBaseStrength"			 "1"									// Base strength
+		"AttributeStrengthGain"			 "0.0"									// Strength bonus per level.
+		"AttributeBaseIntelligence"		 "1"									// Base intelligence
+		"AttributeIntelligenceGain"		 "0.0"									// Intelligence bonus per level.
+		"AttributeBaseAgility"			 "1"									// Base agility
+		"AttributeAgilityGain"			 "0.0"									// Agility bonus per level.
+		
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"					 "81"									// Base health
+		"StatusHealthRegen"				 "2.97"									// Health regeneration rate.
+		"StatusMana"					 "107"									// Base mana.
+		"StatusManaRegen"				 "2.96"									// Mana regeneration rate.
     }
 }

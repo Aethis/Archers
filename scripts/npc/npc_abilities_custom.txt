@@ -7,24 +7,30 @@
         "ID"                             "600"
         "AbilityBehavior"                "DOTA_ABILITY_BEHAVIOR_DIRECTIONAL | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
         "BaseClass"                      "mirana_arrow"
-        "Maxlevel"                       "no clue yet"
+        "Maxlevel"                       "6"
+		"AbilitySharedCooldown"			 "bow"
+		"precache"
+		{
+			"particlefile"          "particles/units/heroes/hero_mirana.pcf"
+			"soundfile"				"scripts/game_sounds_heroes/game_sounds_mirana.txt"
+		}
         
         // Casting
         //-------------------------------------------------------------------------------------------------------------
-        "AbilityCastRange"               "5000"
+        "AbilityCastRange"               "1000"
         "AbilityCastPoint"               "0.0"
         // Time        
         //-------------------------------------------------------------------------------------------------------------
-        "AbilityCooldown"                "5"
-        "AbilityDuration"                "3.11 3.11 3.11 3.11"
+        "AbilityCooldown"                "4"
+        "AbilityDuration"                "3.11 3.11 3.11 3.11 3.11 3.11"
 
         // Damage.
         //-------------------------------------------------------------------------------------------------------------
-        "AbilityDamage"                  "100"
+        "AbilityDamage"                  "1000"
 
         // Cost
         //-------------------------------------------------------------------------------------------------------------
-        "AbilityManaCost"                "1"
+        "AbilityManaCost"                "10"
 
         // Special
         //-------------------------------------------------------------------------------------------------------------
@@ -33,7 +39,7 @@
             "01"
             {
                 "var_type"               "FIELD_FLOAT"
-                "arrow_speed"            "1250.0"
+                "arrow_speed"            "1100.0 1150.0 1200.0 1250.0 1300.0 1350.0"
             }
             "02"
             {
@@ -43,12 +49,12 @@
             "03"
             {
                 "var_type"               "FIELD_INTEGER"
-                "arrow_range"            "3000"
+                "arrow_range"            "700 800 900 1000 1100 1200"
             }
             "04"
             {
                 "var_type"               "FIELD_INTEGER"
-                "arrow_max_stunrange"    "1500"
+                "arrow_max_stunrange"    "500"
             }
             "05"
             {
@@ -77,10 +83,19 @@
     {
         "ID"                             "601"
         "AbilityBehavior"                "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-        "BaseClass"                      "ability_datadriven"
+        "BaseClass"                      "zuus_thundergods_wrath"
+		"AbilityType"					 "DOTA_ABILITY_TYPE_BASIC"
+		"AbilityUnitDamageType"			 "DAMAGE_TYPE_MAGICAL"
         "Maxlevel"                       "4"
+		"LevelsBetweenUpgrades"			 "2"
+		"RequiredLevel"				     "1"
+		"precache"
+		{
+			"particlefile"			"particles/units/heroes/hero_zuus.pcf"
+			"soundfile"				"scripts/game_sounds_heroes/game_sounds_zuus.txt"
+		}
     
-    // Casting
+        // Casting
         "AbilityCastPoint"               "0 0 0 0"
     
         // Time        
@@ -89,19 +104,59 @@
 
         // Cost
         //-------------------------------------------------------------------------------------------------------------
-        "AbilityManaCost"                "6.0 5.0 4.0 3.0"
-        //to be finished later
+        "AbilityManaCost"                "60.0 50.0 40.0 30.0"
+        		
+        // Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"true_sight_radius"		"0 0 0 0"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"sight_radius_day"		"100 100 100 100"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"sight_radius_night"	"100 100 100 100"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"sight_duration"		"1.0 1.0 1.0 1.0"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"0 0 0 0"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_scepter"		"0 0 0 0"
+			}
+		}
         
     }
     
     "archers_evasion"
     {
         "ID"                             "602"
-        "AbilityBehavior"                "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_MOVEMENT | DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES"
+        "AbilityBehavior"                "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_MOVEMENT | DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
         "BaseClass"                      "puck_phase_shift"
         "Maxlevel"                       "6"
+		"precache"
+		{
+			"particlefile"			"particles/units/heroes/hero_puck.pcf"
+			"soundfile"				"scripts/game_sounds_heroes/game_sounds_puck.txt"
+		}
     
-    // Casting
+        // Casting
         //-------------------------------------------------------------------------------------------------------------
         "AbilityCastPoint"               "0 0 0 0"
         "AbilityChannelTime"             "3.0 3.0 3.0 3.0 3.0 3.0"
@@ -133,7 +188,6 @@
         "AbilityType"                    "DOTA_ABILITY_TYPE_ULTIMATE"
         "BaseClass"                      "ability_datadriven"
         "Maxlevel"                       "1"
-        //to be finished later
     }
     
     "archers_vision_potion_effects"

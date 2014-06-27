@@ -1,7 +1,10 @@
+//Archers items by Aethis
+
 "DOTAAbilities"
 {
     "item_archers_potion_of_invisibility"
     {
+        //main shop
         //General
         "ID"                             "850"
         "AbilityBehavior"                "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
@@ -40,6 +43,7 @@
     }
     "item_archers_potion_of_speed"
     {
+        //main shop
         //General
         "ID"                             "851"
         "AbilityBehavior"                "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
@@ -95,6 +99,7 @@
     }
     "item_archers_potion_of_omniscience"
     {
+        //main shop
         "ID"                             "852"
         "AbilityBehavior"                "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
         "BaseClass"                      "item_datadriven"
@@ -130,16 +135,17 @@
             }
         }
     }
-	"item_archers_scroll_of_speed"
-	{
-		"ID"                             "853"
+    "item_archers_scroll_of_speed"
+    {
+        //main shop
+        "ID"                             "853"
         "AbilityBehavior"                "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
         "BaseClass"                      "item_datadriven"
         "AbilityTextureName"             "tbd853"
-	    
-		// Stats        
+        
+        // Stats        
         //-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"                "10"
+        "AbilityCooldown"                "10"
         "AbilityManaCost"                "0"
         "ItemCost"                       "10"
         "ItemQuality"                    "consumable"
@@ -160,111 +166,394 @@
             {
                 "Target"
                 {
-                    "Center" "CASTER"
-                    "Radius" "%radius"
-                    "Teams" "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-                    "Types" "DOTA_UNIT_TARGET_HERO"
+                                         "Center" "CASTER"
+                                         "Radius" "%radius"
+                                         "Teams" "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+                                         "Types" "DOTA_UNIT_TARGET_HERO"
                 }
                 "ModifierName"           "modifier_speed_scroll_activate"
             }
-		}
+        }
+        "Modifiers"
+        {
+            "modifier_speed_scroll_activate"
+            {
+                "Duration"               "10"
+                "Properties"
+                {
+                                         "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"                  "25"
+                }
+            }
+        }
+    }
+    "item_archers_potion_of_mana"
+    {
+        //main shop
+        "ID"                             "854"
+        "BaseClass"                      "item_clarity"
+        "AbilityBehavior"                "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+        "AbilityUnitTargetTeam"          "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+        "AbilityUnitTargetType"          "DOTA_UNIT_TARGET_HERO"
+        "Model"                          "models/props_gameplay/clarity.mdl"
+        // Stats
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityCastRange"               "100"
+        "AbilityCastPoint"               "0.0"
+        
+        // Item Info
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemCost"                       "3"
+        "ItemShopTags"                   "consumable"
+        "ItemQuality"                    "consumable"
+        "ItemAliases"                    "potion of mana"
+        "ItemStackable"                  "1"
+        "ItemPermanent"                  "0"
+        "ItemInitialCharges"             "1"
+        
+        // Special    
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type"               "FIELD_INTEGER"
+                "buff_duration"          "1"
+            }
+            "02"
+            {
+                "var_type"               "FIELD_INTEGER"
+                "total_mana"             "100"
+            }
+        }
+    }
+    "item_archers_dust_of_appearance"
+    {
+        //main shop
+        "ID"                             "855"
+        "BaseClass"                      "item_dust"
+        "AbilityBehavior"                "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+        "Model"                          "models/props_gameplay/dust.mdl"
+        "Effect"                         "dropped_dust"
+        
+        // Stats
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityCooldown"                "0.0"
+        
+        // Item Info
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityManaCost"                "0"
+        "ItemCost"                       "4"
+        "ItemShopTags"                   "consumable"
+        "ItemQuality"                    "consumable"
+        "ItemAliases"                    "dust of appearance"
+        "ItemStackable"                  "1"
+        "ItemShareability"               "ITEM_FULLY_SHAREABLE"
+        "ItemPermanent"                  "0"
+        "ItemInitialCharges"             "2"          
+        "ItemDeclarations"               "DECLARE_PURCHASES_TO_TEAMMATES"
+        "ItemSupport"                    "1"
+
+
+        // Special    
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type"               "FIELD_INTEGER"
+                "duration"               "20"
+            }
+            "02"
+            {
+                "var_type"               "FIELD_INTEGER"
+                "radius"                 "1050"
+            }
+            "03"
+            {
+                "var_type"               "FIELD_INTEGER"
+                "movespeed"              "0"
+            }
+        }
+    }
+    "item_archers_assassins_bow"
+    {
+        //pa shop
+        "ID"                             "856"
+        "AbilityBehavior"                "DOTA_ABILITY_BEHAVIOR_DIRECTIONAL | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+        "BaseClass"                      "item_datadriven"
+        "AbilityTextureName"             "tbd856"
+        "precache"
+        {
+            "particlefile"               "particles/units/heroes/hero_mirana.pcf"
+        }
+        
+        // Stats        
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityCooldown"                "1.5"
+        "AbilitySharedCooldown"          "bow"
+        "AbilityManaCost"                "10"
+        "ItemCost"                       "30"
+        "ItemQuality"                    "common"
+        "ItemAliases"                    "assassins bow"
+        "OnSpellStart"
+        {
+            "LinearProjectile"
+            {
+                "Source"
+                    {
+                        "Center"         "CASTER"
+                    }
+                "Target"                 "POINT"
+                "FixedDistance"          "600"
+                "MoveSpeed"              "1200"
+                "EffectName"             "mirana_spell_arrow"
+                "StartRadius"            "50"
+                "EndRadius"              "50"
+                "TargetTeams"            "DOTA_UNIT_TARGET_TEAM_ENEMY"
+                "TargetTypes"            "DOTA_UNIT_TARGET_HERO"
+                "HasFrontalCone"         "0"
+                "ProvidesVision"         "0"
+                "TargetFlags"            "DOTA_UNIT_TARGET_FLAG_NONE"
+            }
+        }
+        "OnProjectileHitUnit"
+        {
+            "DeleteOnHit"                "1"
+            "Damage"
+            {
+                "Target"                 "TARGET"
+                "Type"                   "DAMAGE_TYPE_MAGICAL"
+                "Damage"                 "1000"
+            }
+        }
+    }
+    "item_archers_long_bow"
+    {
+        //pa shop
+        "ID"                             "857"
+        "AbilityBehavior"                "DOTA_ABILITY_BEHAVIOR_DIRECTIONAL | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+        "BaseClass"                      "item_datadriven"
+        "AbilityTextureName"             "tbd857"
+        "precache"
+        {
+            "particlefile"               "particles/units/heroes/hero_mirana.pcf"
+        }
+        
+        // Stats        
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityCooldown"                "3.5"
+        "AbilitySharedCooldown"          "bow"
+        "AbilityManaCost"                "10"
+        "ItemCost"                       "60"
+        "ItemQuality"                    "common"
+        "ItemAliases"                    "long bow"
+        "OnSpellStart"
+        {
+            "LinearProjectile"
+            {
+                "Source"
+                    {
+                        "Center"         "CASTER"
+                    }
+                "Target"                 "POINT"
+                "FixedDistance"          "1000"
+                "MoveSpeed"              "1250"
+                "EffectName"             "mirana_spell_arrow"
+                "StartRadius"            "50"
+                "EndRadius"              "50"
+                "TargetTeams"            "DOTA_UNIT_TARGET_TEAM_ENEMY"
+                "TargetTypes"            "DOTA_UNIT_TARGET_HERO"
+                "HasFrontalCone"         "0"
+                "ProvidesVision"         "0"
+                "TargetFlags"            "DOTA_UNIT_TARGET_FLAG_NONE"
+            }
+        }
+        "OnProjectileHitUnit"
+        {
+            "DeleteOnHit"                "1"
+            "Damage"
+            {
+                "Target"                 "TARGET"
+                "Type"                   "DAMAGE_TYPE_MAGICAL"
+                "Damage"                 "1000"
+            }
+        }
+    }
+	"item_archers_elunes_bow"
+    {
+        //pa shop
+        "ID"                             "858"
+        "AbilityBehavior"                "DOTA_ABILITY_BEHAVIOR_DIRECTIONAL | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+        "BaseClass"                      "item_datadriven"
+        "AbilityTextureName"             "tbd858"
+        "precache"
+        {
+            "particlefile"               "particles/units/heroes/hero_mirana.pcf"
+        }
+        
+        // Stats        
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityCooldown"                "2.5"
+        "AbilitySharedCooldown"          "bow"
+        "AbilityManaCost"                "10"
+        "ItemCost"                       "75"
+        "ItemQuality"                    "common"
+        "ItemAliases"                    "long bow"
+        "OnSpellStart"
+        {
+            "LinearProjectile"
+            {
+                "Source"
+                    {
+                        "Center"         "CASTER"
+                    }
+                "Target"                 "POINT"
+                "FixedDistance"          "1000"
+                "MoveSpeed"              "1300"
+                "EffectName"             "mirana_spell_arrow"
+                "StartRadius"            "50"
+                "EndRadius"              "50"
+                "TargetTeams"            "DOTA_UNIT_TARGET_TEAM_ENEMY"
+                "TargetTypes"            "DOTA_UNIT_TARGET_HERO"
+                "HasFrontalCone"         "0"
+                "ProvidesVision"         "0"
+                "TargetFlags"            "DOTA_UNIT_TARGET_FLAG_NONE"
+            }
+        }
+        "OnProjectileHitUnit"
+        {
+            "DeleteOnHit"                "1"
+            "Damage"
+            {
+                "Target"                 "TARGET"
+                "Type"                   "DAMAGE_TYPE_MAGICAL"
+                "Damage"                 "1000"
+            }
+        }
+    }
+	"item_archers_huntress's_bow"
+    {
+        //pa shop
+        "ID"                             "858"
+        "AbilityBehavior"                "DOTA_ABILITY_BEHAVIOR_DIRECTIONAL | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+        "BaseClass"                      "item_datadriven"
+        "AbilityTextureName"             "tbd858"
+        "precache"
+        {
+            "particlefile"               "particles/units/heroes/hero_mirana.pcf"
+        }
+        
+        // Stats        
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityCooldown"                "4"
+        "AbilitySharedCooldown"          "bow"
+        "AbilityManaCost"                "10"
+        "ItemCost"                       "85"
+        "ItemQuality"                    "common"
+        "ItemAliases"                    "long bow"
+        "OnSpellStart"
+        {
+            "LinearProjectile"
+            {
+                "Source"
+                    {
+                        "Center"         "CASTER"
+                    }
+                "Target"                 "POINT"
+                "FixedDistance"          "700"
+                "MoveSpeed"              "1050"
+                "EffectName"             "mirana_spell_arrow"
+                "StartRadius"            "50"
+                "EndRadius"              "50"
+                "TargetTeams"            "DOTA_UNIT_TARGET_TEAM_ENEMY"
+                "TargetTypes"            "DOTA_UNIT_TARGET_HERO"
+                "HasFrontalCone"         "0"
+                "ProvidesVision"         "0"
+                "TargetFlags"            "DOTA_UNIT_TARGET_FLAG_NONE"
+            }
+			"ApplyModifier"
+			{
+				"Target"                 "CASTER"
+				"ModifierName"           "modifier_invisible"
+			}
+        }
+        "OnProjectileHitUnit"
+        {
+            "DeleteOnHit"                "1"
+            "Damage"
+            {
+                "Target"                 "TARGET"
+                "Type"                   "DAMAGE_TYPE_MAGICAL"
+                "Damage"                 "1000"
+            }
+        }
 		"Modifiers"
 		{
-			"modifier_speed_scroll_activate"
+			"modifier_archers_huntress_initial"
 			{
-				"Duration"               "10"
-				"Properties"
+				"TextureName"            "nil"
+				"Duration"               "3"
+				"OnDestroy"
 				{
-					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"                  "25"
+					"LinearProjectile"
+					{
+						"Source"
+						{
+							"Center"         "CASTER"
+						}
+						"Target"                 "POINT"
+						"FixedDistance"          "700"
+						"MoveSpeed"              "1050"
+						"EffectName"             "mirana_spell_arrow"
+						"StartRadius"            "50"
+						"EndRadius"              "50"
+						"TargetTeams"            "DOTA_UNIT_TARGET_TEAM_ENEMY"
+						"TargetTypes"            "DOTA_UNIT_TARGET_HERO"
+						"HasFrontalCone"         "0"
+						"ProvidesVision"         "0"
+						"TargetFlags"            "DOTA_UNIT_TARGET_FLAG_NONE"
+					}
+					"Random"
+					{
+						"Chance"	".50"
+						"OnSuccess"
+						{
+							"ApplyModifier"
+							{
+								"Target"         "CASTER"
+								"ModifierName"   "modifier_archers_huntress_final"
+							}
+						}
+					}
+				}
+				
+			}
+			"modifier_archers_huntress_final"
+			{
+				"Duration"               ".5"
+				//"IsHidden"               "0"
+				"OnDestroy"
+				{
+					"LinearProjectile"
+					{
+						"Source"
+						{
+							"Center"         "CASTER"
+						}
+						"Target"                 "POINT"
+						"FixedDistance"          "700"
+						"MoveSpeed"              "1050"
+						"EffectName"             "mirana_spell_arrow"
+						"StartRadius"            "50"
+						"EndRadius"              "50"
+						"TargetTeams"            "DOTA_UNIT_TARGET_TEAM_ENEMY"
+						"TargetTypes"            "DOTA_UNIT_TARGET_HERO"
+						"HasFrontalCone"         "0"
+						"ProvidesVision"         "0"
+						"TargetFlags"            "DOTA_UNIT_TARGET_FLAG_NONE"
+					}
 				}
 			}
 		}
-	}
-	"item_archers_potion_of_mana"
-	{
-		"ID"							 "854"
-		"BaseClass"                      "item_clarity"
-		"AbilityBehavior"				 "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
-		"AbilityUnitTargetTeam"			 "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-		"AbilityUnitTargetType"			 "DOTA_UNIT_TARGET_HERO"
-		"Model"							 "models/props_gameplay/clarity.mdl"
-		// Stats
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				 "100"
-		"AbilityCastPoint"				 "0.0"
-		
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"					   	 "3"
-		"ItemShopTags"					 "consumable"
-		"ItemQuality"					 "consumable"
-		"ItemAliases"					 "potion of mana"
-		"ItemStackable"					 "1"
-		"ItemPermanent"					 "0"
-		"ItemInitialCharges"			 "1"
-		
-		// Special	
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"buff_duration"			"1"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"total_mana"			"100"
-			}
-		}
-	}
-	"item_archers_dust_of_appearance"
-	{
-		"ID"							 "855"
-		"BaseClass"                      "item_dust"
-		"AbilityBehavior"				 "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-		"Model"							 "models/props_gameplay/dust.mdl"
-		"Effect"						 "dropped_dust"
-		
-		// Stats
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				 "0.0"
-		
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				 "0"
-		"ItemCost"						 "4"
-		"ItemShopTags"					 "consumable"
-		"ItemQuality"					 "consumable"
-		"ItemAliases"					 "dust of appearance"
-		"ItemStackable"					 "1"
-		"ItemShareability"				 "ITEM_FULLY_SHAREABLE"
-		"ItemPermanent"					 "0"
-		"ItemInitialCharges"			 "2"		  
-		"ItemDeclarations"				 "DECLARE_PURCHASES_TO_TEAMMATES"
-		"ItemSupport"					 "1"
-
-
-		// Special	
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"duration"				"20"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"radius"				"1050"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"movespeed"				"0"
-			}
-		}
-	}
+    }
 }
